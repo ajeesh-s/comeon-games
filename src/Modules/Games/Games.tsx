@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "primereact/card";
 import { InputText } from "primereact/inputtext";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
@@ -28,6 +28,12 @@ const Games: React.FC<GamesProps> = ({
     categories?.length ? categories[0] : null
   );
 
+  useEffect(() => {
+    if (categories?.length && !category) {
+      setCategory(categories[0]);
+    }
+  }, [categories]);
+
   const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setGlobalFilterValue(value);
@@ -56,11 +62,12 @@ const Games: React.FC<GamesProps> = ({
       )}
       <main className="p-4">
         <div className="col-12">
-          <Card unstyled className="p-0 fadein animation-duration-1000">
+          <Card unstyled className="p-0 fadein animation-duration-500">
             <div className="flex justify-content-between flex-wrap">
-              <span className="p-float-label p-input-icon-left m-2 fadein animation-duration-1000">
+              <span className="p-float-label p-input-icon-left m-2 fadein animation-duration-500">
                 <i className="pi pi-search" />
                 <InputText
+                className="p-inputtext-sm adein animation-duration-500"
                   autoFocus
                   name="game-search"
                   placeholder="Games Search"
@@ -72,7 +79,7 @@ const Games: React.FC<GamesProps> = ({
               <Dropdown
                 dataKey="id"
                 optionLabel="name"
-                className="m-2 fadein animation-duration-1000"
+                className="m-2 fadein animation-duration-500 p-inputtext-sm"
                 options={categories}
                 value={category}
                 placeholder="Categories"

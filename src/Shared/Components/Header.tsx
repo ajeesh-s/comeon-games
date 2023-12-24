@@ -10,6 +10,8 @@ import { logoutSuccess } from "../../Framework/Context/Actions";
 import { logout } from "../../Services/LoginService";
 import { IUser } from "../../Types/LoginTypes";
 
+import { TEXT_LABELS } from "../../Utilities/TextLabels";
+
 const Header: React.FC = () => {
 
   const { state, dispatch } = useContext(AppContext);
@@ -32,16 +34,16 @@ const Header: React.FC = () => {
         <Image
           src="/images/logo.svg"
           alt="Image"
-          className="w-20rem fadein animation-duration-1000 align-items-center"
+          className="w-20rem fadein animation-duration-500 align-items-center"
         />
 
         <div className="flex flex-row pr-4">
           <div className="flex flex-row pr-4">
             <div className="flex flex-column align-items-end p-2 ">
-              <div className="font-semibold text-white text-base text-right fadein animation-duration-1000">
+              <div className="font-semibold text-white text-base text-right fadein animation-duration-500">
                 {state.user?.name}
               </div>
-              <div className="text-white text-xs text-right fadein animation-duration-1000">
+              <div className="text-white text-xs text-right fadein animation-duration-500">
                 {state.user?.event}
               </div>
             </div>
@@ -49,14 +51,14 @@ const Header: React.FC = () => {
               image={state.user?.avatar}
               shape="circle"
               size="large"
-              className="p-mr-2 fadein animation-duration-1000"
+              className="p-mr-2 fadein animation-duration-500"
             />
           </div>
           <Button
             icon="pi pi-power-off"
             onClick={handleLogout}
-            className="p-button-rounded cursor-pointer fadein animation-duration-1000"
-            tooltip="Logout"
+            className="p-button-rounded cursor-pointer fadein animation-duration-500"
+            tooltip={TEXT_LABELS.loginModule.logout}
             tooltipOptions={{
               position: "bottom",
               mouseTrack: true,

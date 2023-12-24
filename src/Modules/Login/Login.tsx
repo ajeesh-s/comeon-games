@@ -53,13 +53,13 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
   return (
     <div className="flex align-items-center justify-content-center">
-      <div className="p-4 shadow-2 border-round w-4 bg-black-alpha-40">
+      <div className="p-4 shadow-2 border-round w-30rem bg-black-alpha-40">
         <form onSubmit={formik.handleSubmit} className="p-fluid">
           <h5 className="text-center m-0">
             <img src="/images/logo.svg" alt="come-on" />
           </h5>
           <Divider />
-          <div className="field pb-3">
+          <div className="field py-3">
             <span className="p-float-label p-input-icon-right">
               <i className="pi pi-user" />
               <InputText

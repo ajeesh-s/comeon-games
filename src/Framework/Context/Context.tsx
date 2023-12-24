@@ -5,7 +5,7 @@ import { AppAction } from "../../Types/ActionTypes";
 import { IAppState } from "../../Types/StateTypes";
 
 const storedUserData = localStorage.getItem("user");
-const initialState: IAppState = { user: storedUserData? JSON.parse(storedUserData) : null };
+const initialState: IAppState = { user: storedUserData? JSON.parse(storedUserData) : null ,categories:null};
 export const AppContext = createContext<{
   state: IAppState;
   dispatch: Dispatch<AppAction>;
