@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { classNames } from "primereact/utils";
 import { InputText } from "primereact/inputtext";
@@ -12,6 +12,12 @@ interface LoginProps {
   onLogin: (data: ILogin) => Promise<void>;
 }
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -49,7 +55,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     <div className="flex align-items-center justify-content-center">
       <div className="p-4 shadow-2 border-round w-4 bg-black-alpha-40">
         <form onSubmit={formik.handleSubmit} className="p-fluid">
-          <h5 className="text-center">
+          <h5 className="text-center m-0">
             <img src="/images/logo.svg" alt="come-on" />
           </h5>
           <Divider />
@@ -78,11 +84,18 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           </div>
           <div className="field pb-3">
             <span className="p-float-label p-input-icon-right">
-              <i className="pi pi-eye" />
+              <i
+                className={classNames("pi", {
+                  "pi-eye": !showPassword,
+                  "pi-eye-slash": showPassword,
+                })}
+                onClick={togglePasswordVisibility}
+                style={{ cursor: "pointer" }}
+              />
               <InputText
                 id="password"
                 name="password"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 className={classNames({

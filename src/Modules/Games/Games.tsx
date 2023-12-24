@@ -21,7 +21,6 @@ const Games: React.FC<GamesProps> = ({
   categoryChange,
   searchGames,
 }) => {
-  console.log("categories", categories, categories[0]);
   const [visible, setVisible] = useState(false);
   const [currentGame, setCurrentGame] = useState<IGame | null>(null);
   const [globalFilterValue, setGlobalFilterValue] = useState("");

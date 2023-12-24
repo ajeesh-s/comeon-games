@@ -4,7 +4,7 @@ export const TEXT_LABELS ={
         userName:"User name*",
         password:"Password*",
         required: {
-            userName: 'Username required',
+            userName: 'User name required',
             password: 'Password required'
         }
     }

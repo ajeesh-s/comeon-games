@@ -11,7 +11,6 @@ export const login = async (data:ILogin) => {
   };
 
   export const logout = async (data:IUser) => {
-    debugger
     try {
       const response = await apiService.post('/logout', JSON.stringify({username:data.username}));
       return response.data;

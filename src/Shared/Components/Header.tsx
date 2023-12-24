@@ -21,7 +21,6 @@ const Header: React.FC = () => {
         dispatch(logoutSuccess());
         navigate(PATH_NAMES.login);
       }
-      console.log("Response:", response);
     } catch (error: any) {
       console.error("Error:", error);
     }
