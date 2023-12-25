@@ -9,16 +9,14 @@ import "primeflex/primeflex.css";
 import { AppStateProvider } from "./Framework/Context/Context";
 import AppRoutes from "./Framework/Routes/AppRoutes";
 
-const App:React.FC = () =>{
+const App: React.FC = () => {
   return (
     <Router>
       <AppStateProvider>
-        <div className="App">
           <AppRoutes />
-        </div>
       </AppStateProvider>
     </Router>
   );
-}
+};
 
 export default App;

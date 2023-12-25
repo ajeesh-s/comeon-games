@@ -52,10 +52,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <div className="flex align-items-center justify-content-center">
+    <div className="flex align-items-center justify-content-center fadein animation-duration-500">
       <div className="p-4 shadow-2 border-round w-30rem bg-black-alpha-40">
         <form onSubmit={formik.handleSubmit} className="p-fluid">
-          <h5 className="text-center m-0">
+          <h5 className="text-center m-0 fadein animation-duration-500">
             <img src="/images/logo.svg" alt="come-on" />
           </h5>
           <Divider />
@@ -116,7 +116,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <Button
             type="submit"
             label={TEXT_LABELS.loginModule.login}
-            className="mt-2"
+            className="mt-2 fadein animation-duration-500"
           />
         </form>
       </div>

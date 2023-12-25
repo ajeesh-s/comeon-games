@@ -19,11 +19,11 @@ const GamesContainer: React.FC = () => {
     const fetchData = async () => {
       try {
         let categories;
-        if(!state.categories){
-           categories = await getCategories();
-           dispatch(setCategoriesValues(categories));
-        }else{
-          categories =state.categories;
+        if (!state.categories) {
+          categories = await getCategories();
+          dispatch(setCategoriesValues(categories));
+        } else {
+          categories = state.categories;
         }
         setCategories(categories);
         const gamesRes = await getGames();

@@ -6,8 +6,12 @@ const HeaderHOC = <P extends object>(
 ) => {
   return class EnhancedHeader extends React.Component<P> {
     render() {
-      return <> <Header/><WrappedComponent {...this.props} />;</>
-     
+      return (
+        <>
+          <Header />
+          <WrappedComponent {...this.props} />;
+        </>
+      );
     }
   };
 };

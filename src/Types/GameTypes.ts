@@ -1,12 +1,12 @@
 export interface ICategory {
-    id: number;
-    name: string;
-  }
+  id: number;
+  name: string;
+}
 
-  export interface IGame {
-    name: string;
-    description: string;
-    code: string;
-    icon: string;
-    categoryIds: number[];
-  }
+export interface IGame {
+  name: string;
+  description: string;
+  code: string;
+  icon: string;
+  categoryIds: number[];
+}

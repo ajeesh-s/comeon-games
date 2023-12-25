@@ -13,7 +13,6 @@ import { IUser } from "../../Types/LoginTypes";
 import { TEXT_LABELS } from "../../Utilities/TextLabels";
 
 const Header: React.FC = () => {
-
   const { state, dispatch } = useContext(AppContext);
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -29,15 +28,15 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="p-4">
+    <header className="p-4 p-4 sticky top-0 z-5 shadow-6 surface-section">
       <div className="flex justify-content-between flex-wrap">
         <Image
           src="/images/logo.svg"
           alt="Image"
-          className="w-20rem fadein animation-duration-500 align-items-center"
+          className="w-20rem fadein animation-duration-500"
         />
 
-        <div className="flex flex-row pr-4">
+        <div className="flex flex-row pr-4 flex-grow-1 justify-content-end">
           <div className="flex flex-row pr-4">
             <div className="flex flex-column align-items-end p-2 ">
               <div className="font-semibold text-white text-base text-right fadein animation-duration-500">

@@ -50,7 +50,7 @@ const Games: React.FC<GamesProps> = ({
     setVisible(true);
     setCurrentGame(game);
   };
-  
+
   return (
     <>
       {visible && (
@@ -67,7 +67,7 @@ const Games: React.FC<GamesProps> = ({
               <span className="p-float-label p-input-icon-left m-2 fadein animation-duration-500">
                 <i className="pi pi-search" />
                 <InputText
-                className="p-inputtext-sm adein animation-duration-500"
+                  className="p-inputtext-sm adein animation-duration-500"
                   autoFocus
                   name="game-search"
                   placeholder="Games Search"

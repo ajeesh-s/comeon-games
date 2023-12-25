@@ -4,10 +4,10 @@ import GamesContainer from "../../Modules/Games/GamesContainer";
 import LoginContainer from "../../Modules/Login/LoginContainer";
 import { AppContext } from "../Context/Context";
 
-export const PATH_NAMES={
-  login:"/login",
-  games:"/games"
-}
+export const PATH_NAMES = {
+  login: "/login",
+  games: "/games",
+};
 const routes = [
   {
     path: PATH_NAMES.login,
@@ -19,7 +19,7 @@ const routes = [
   },
 ];
 
-const AppRoutes:React.FC = () => {
+const AppRoutes: React.FC = () => {
   const { state } = useContext(AppContext);
 
   return (

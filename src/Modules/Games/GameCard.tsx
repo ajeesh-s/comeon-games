@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "primereact/button";
 import { Card } from "primereact/card";
-import { Tag } from 'primereact/tag';
+import { Tag } from "primereact/tag";
 
 import { ICategory, IGame } from "../../Types/GameTypes";
 import { AppContext } from "../../Framework/Context/Context";
@@ -16,9 +16,10 @@ interface GamePlayProps {
 const GameCard: React.FC<GamePlayProps> = ({ game, gamePlayOnClick }) => {
   const ALL_CATEGORY_ID = 0;
   const { state } = useContext(AppContext);
-  const getCategoryNameById = (id:number) =>{
-    return state.categories?.find((category:ICategory)=> category.id === id)?.name
-  }
+  const getCategoryNameById = (id: number) => {
+    return state.categories?.find((category: ICategory) => category.id === id)
+      ?.name;
+  };
 
   return (
     <div className="col-12">
@@ -38,11 +39,18 @@ const GameCard: React.FC<GamePlayProps> = ({ game, gamePlayOnClick }) => {
                 {game.description}
               </div>
               <div className="flex flex-row">
-                {
-                  game.categoryIds.map((id:number)=>{
-                    return id!== ALL_CATEGORY_ID && <Tag  key={id} severity="info" value={getCategoryNameById(id)} className="mr-2 fadein animation-duration-500"></Tag>
-                  })
-                }
+                {game.categoryIds.map((id: number) => {
+                  return (
+                    id !== ALL_CATEGORY_ID && (
+                      <Tag
+                        key={id}
+                        severity="info"
+                        value={getCategoryNameById(id)}
+                        className="mr-2 fadein animation-duration-500"
+                      ></Tag>
+                    )
+                  );
+                })}
               </div>
             </div>
             <div className="flex sm:flex-column sm:align-items-end gap-3 sm:gap-2">
