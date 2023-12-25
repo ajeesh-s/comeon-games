@@ -62,6 +62,7 @@ const Header: React.FC = () => {
               position: "bottom",
               mouseTrack: true,
               mouseTrackTop: 15,
+              className:"text-sm"
             }}
           />
         </div>

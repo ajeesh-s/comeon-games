@@ -62,6 +62,7 @@ const GameCard: React.FC<GamePlayProps> = ({ game, gamePlayOnClick }) => {
                   position: "bottom",
                   mouseTrack: true,
                   mouseTrackTop: 15,
+                  className:"text-sm"
                 }}
                 onClick={() => gamePlayOnClick(game)}
               ></Button>

@@ -65,6 +65,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               <InputText
                 id="username"
                 name="username"
+                autoFocus
                 value={formik.values.username}
                 onChange={formik.handleChange}
                 className={classNames({
@@ -77,7 +78,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                   "p-error": isFormFieldValid("username"),
                 })}
               >
-                {TEXT_LABELS.loginModule.userName}
+                {TEXT_LABELS.loginModule.userName}<small className="text-red-600">*</small>
               </label>
             </span>
             {getFormErrorMessage("username")}
@@ -108,7 +109,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                   "p-error": isFormFieldValid("password"),
                 })}
               >
-                {TEXT_LABELS.loginModule.password}
+                {TEXT_LABELS.loginModule.password}<small className="text-red-600">*</small>
               </label>
             </span>
             {getFormErrorMessage("password")}
