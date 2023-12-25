@@ -11,15 +11,18 @@ Welcome to the ComeOn Javascript Test project! This repository contains the impl
 The project comprises several key features, including:
 
 1. **Login Functionality:**
+
    - Connect the login form to the /login API call.
    - Transition to the games list screen on valid credentials.
    - Provide feedback and allow retry on invalid credentials.
 
 2. **Logout Functionality:**
+
    - Connect the logout button to the /logout API call.
    - Transition to the login screen with empty input fields on successful logout.
 
 3. **Games List Screen:**
+
    - Requires user login.
    - List all games from the /games API call.
    - List categories from the /categories API call.
@@ -30,7 +33,6 @@ The project comprises several key features, including:
    - Requires user login.
    - Load the selected game via the provided API.
    - Provide a way to go back to the Games list screen.
-
 
 ## Getting Started
 
@@ -46,6 +48,7 @@ json-server --watch mock/mock-data.json --port 3001 --middlewares mock/mock-api.
 ### Start the application
 
 ```
+npm install
 npm start
 ```
 
